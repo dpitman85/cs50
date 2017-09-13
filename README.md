@@ -64,3 +64,32 @@ Implement a program that encrypts messages using Vigenère’s cipher, per the b
 $ ./vigenere ABC
 plaintext:  HELLO
 ciphertext: HFNLP
+
+
+Problem Set 3
+______________
+1) Find
+
+Implement a program that finds a number among numbers, per the below.
+
+$ ./generate 1000 | ./find 42
+Didn't find needle in haystack.
+
+
+2) Fifteen
+
+Implement the Game of Fifteen, per the below.
+
+$ ./fifteen 3
+WELCOME TO GAME OF FIFTEEN
+
+8  7  6
+
+5  4  3
+
+2  1  _
+
+Tile to move:
+
+
+
