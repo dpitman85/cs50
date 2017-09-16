@@ -1,0 +1,47 @@
+1. What’s stdint.h?
+
+    A header file that allows for the creation of ints of defined length and with defined bounds outside the default structure definitions
+
+2. What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+
+    It minimizes memory usage when you know you will only need ints of a particular size.  It also allows you to iterate using pointers through files that store recurrent data in structures of a fixed size that don't match the default int.
+
+3. How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+
+    BYTE = 1 byte; DWORD = 4 bytes; LONG = 4 bytes; WORD = 2 bytes
+
+4. What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? Leading bytes used to identify file formats (with high probability) are generally called "magic numbers."
+
+    B M -> 66 77 -> 42 4D
+
+5. What’s the difference between bfSize and biSize?
+
+    bfSize is the size of the bitmap file, including the bytes for the file headers, biSize is the size in bytes of the image itself independent of the header data
+
+6. What does it mean if biHeight is negative?
+
+    That indicates a top-down configuration for the bitmap
+
+7. What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
+
+    biBitCount
+
+8. Why might fopen return NULL in lines 24 and 32 of copy.c?
+
+    If the file has permissions that restrict opening or there are memory issues in the program that prevent opening the file.
+
+9. Why is the third argument to fread always 1 in our code?
+
+    Because the size argument (second argument) is setting the unit size, and we want to read/write one unit at a time through the file.
+
+10. What value does line 65 of copy.c assign to padding if bi.biWidth is 3?
+
+    3 [(4 - (3 * 3) % 4) % 4]
+
+11. What does fseek do?
+
+    Moves the current pointer by a given number
+
+12. What is SEEK_CUR?
+
+    The current position of the pointer in the stream
