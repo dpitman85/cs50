@@ -1,0 +1,27 @@
+1. What is pneumonoultramicroscopicsilicovolcanoconiosis?
+
+    A synonym for silicosis, a lung disease caused by inhaling quartz dust, that was invented to be an artificially long word.
+
+2. According to its man page, what does getrusage do?
+
+    Returns information about system resource usage in the form of a data structure, rusage, with various pieces of performance information.
+
+3. Per that same man page, how many members are in a variable of type struct rusage?
+
+    Sixteen
+
+4. Why do you think we pass before and after by reference (instead of by value) to calculate, even though we’re not changing their contents?
+
+    Because the argument calls for a pointer and passing by reference is faster since it is being called multiple times with different values returned each time.
+
+5. Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, convince us that you indeed understand how that function’s for loop works.
+
+    TODO
+
+6. Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+
+    By reading words one character at a time, you have better control over disregarding numbers and other characters, as well as controlling aspects like length and placement of apostrophes.
+
+7. Why do you think we declared the parameters for check and load as const (which means "constant")?
+
+    Because the same block of memory (an array for the word and a file for the dictionary) are being used each time the function is called, so even though values are changing, the pointer is constant.

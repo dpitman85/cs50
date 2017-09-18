@@ -92,4 +92,54 @@ WELCOME TO GAME OF FIFTEEN
 Tile to move:
 
 
+Problem Set 4
+______________
+1) Whodunit
+
+Answer some questions and then implement a program that reveals a hidden message in a BMP, per the below.
+
+$ ./whodunit clue.bmp verdict.bmp
+
+
+2) Resize
+
+Implement a program that resizes BMPs, per the below.
+
+$ ./resize 4 small.bmp large.bmp
+
+
+3) Recover
+
+Implement a program that recovers JPEGs from a forensic image, per the below.
+
+$ ./recover card.raw
+
+
+Problem Set 5
+______________
+1) Speller
+
+Implement a program that spell-checks a file, per the below.
+
+$ ./speller texts/austinpowers.txt
+MISSPELLED WORDS
+
+[...]
+Bigglesworth
+[...]
+Virtucon
+[...]
+friggin'
+[...]
+trippy
+[...]
+
+WORDS MISSPELLED:
+WORDS IN DICTIONARY:
+WORDS IN TEXT:
+TIME IN load:
+TIME IN check:
+TIME IN size:
+TIME IN unload:
+TIME IN TOTAL:
 
