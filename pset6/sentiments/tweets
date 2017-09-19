@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+import os
+import sys
+import nltk
+
+from nltk.tokenize import TweetTokenizer
+from helpers import get_user_timeline
+from analyzer import Analyzer
+from termcolor import colored
+
+def main(screenName):
+    # ensure proper usage
+    if len(sys.argv) != 2:
+        sys.exit("Usage: ./tweets screenName")
+
+    #retrieve tweet
+    tweets = get_user_timeline(screenName, 100)
+
+    if tweets == None:
+        sys.exit("Failed to obtain tweets from {}".format(screenName))
+
+    # absolute paths to lists
+    positives = os.path.join(sys.path[0], "positive-words.txt")
+    negatives = os.path.join(sys.path[0], "negative-words.txt")
+
+    # instantiate analyzer
+    analyzer = Analyzer(positives, negatives)
+
+    # analyze tweets
+    for tweet in tweets:
+        score = analyzer.analyze(tweet)
+        if score > 0.0:
+            print(colored("{} {}".format(score, tweet), "green"))
+        elif score < 0.0:
+            print(colored("{} {}".format(score, tweet), "red"))
+        else:
+            print(colored("{} {}".format(score, tweet), "yellow"))
+
+
+if __name__ == "__main__":
+    main(sys.argv[1])
