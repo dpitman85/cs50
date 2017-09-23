@@ -8,3 +8,9 @@
 {{ chart | safe }}
 <a href="/"><button>Search Again</button></a>
 {% endblock %}
+
+{% block result_list %}
+{% for line in printout %}
+<p style="color: {{ line[0] }}">{{ line[1] }} {{ line[2] }}</p>
+{% endfor %}
+{% endblock %}

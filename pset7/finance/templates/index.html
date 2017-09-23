@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed">
+            <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Current Price</th>
+                <th>Total Value</th>
+            </tr>
+            {% for stock in stocks %}
+            <tr>
+                <td>{{ stock.name }}</td>
+                <td>{{ stock.stock_symbol }}</td>
+                <td>{{ stock.shares }}</td>
+                <td>{{ stock.price }}</td>
+                <td>{{ stock.value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed">
+            <tr>
+                <th>Remaining Cash</th>
+                <th>Portfolio Value</th>
+            </tr>
+            <tr>
+                <td>{{ cash }}</td>
+                <td>{{ total }}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

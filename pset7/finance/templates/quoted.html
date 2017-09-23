@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search for Quote
+{% endblock %}
+
+{% block main %}
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed">
+            <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>{{ quote.name }}</td>
+                <td>{{ quote.symbol }}</td>
+                <td>{{ quote.price }}</td>
+            </tr>
+
+        </table>
+    </div>
+{% endblock %}

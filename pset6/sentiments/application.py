@@ -29,6 +29,8 @@ def search():
     # instantiate analyzer
     analyzer = Analyzer(positives, negatives)
 
+    printout = []
+
     # analyze tweets
     positive, negative, neutral = 0.0, 0.0, 100.0
     for tweet in tweets:
@@ -36,12 +38,16 @@ def search():
         if score > 0.0:
             positive += 1
             neutral -= 1
+            printout.append(['green', score, tweet])
         elif score < 0.0:
             negative += 1
             neutral -= 1
+            printout.append(['red', score, tweet])
+        else:
+            printout.append(['#aa0', score, tweet])
 
     # generate chart
     chart = helpers.chart(positive, negative, neutral)
 
     # render results
-    return render_template("search.html", chart=chart, screen_name=screen_name)
+    return render_template("search.html", chart=chart, screen_name=screen_name, printout=printout)
